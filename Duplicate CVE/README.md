@@ -1,4 +1,4 @@
-# Path Traversal to RCE
+<!--# Path Traversal to RCE
 
 <img width="1815" height="1213" alt="image" src="https://github.com/user-attachments/assets/f012d214-ba0f-4689-b169-4fd51810bf94" />
 
@@ -168,3 +168,4 @@ read_yaml() and overwrite_yaml()
 
 1. Enforce Strict Filename Policy by validate on the file extension.
 2. Normalize and Validate the Final Path.
+-->
