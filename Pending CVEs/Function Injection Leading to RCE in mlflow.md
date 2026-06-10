@@ -146,7 +146,7 @@ By supplying a `file_name` value containing directory traversal sequences, an at
 import mlflow
 
 obj = mlflow.utils.yaml_utils.safe_edit_yaml(
-    "/home/hadi/",
+    "/home/user/",
     "../../../../../../../../../../etc/passwd",
     lambda x: x
 )
