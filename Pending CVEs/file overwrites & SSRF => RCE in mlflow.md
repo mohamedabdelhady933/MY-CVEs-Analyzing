@@ -2,7 +2,7 @@
 
 | Field                  | Details                                                                                          |
 | ---------------------- | ------------------------------------------------------------------------------------------------ |
-| **Affected Software**  | MLflow v3.10.0 (latest)                                                                          |
+| **Affected Software**  | MLflow v3.13.0 (latest)                                                                          |
 | **Vendor**             | MLflow / Databricks                                                                              |
 | **Repository**         | [mlflow/mlflow](https://github.com/mlflow/mlflow)                                                |
 | **Vulnerability Type** | SSRF + Arbitrary File Overwrite → Remote Code Execution (RCE)                                   |
