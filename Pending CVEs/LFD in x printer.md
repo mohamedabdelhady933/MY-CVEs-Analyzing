@@ -9,15 +9,15 @@
 | **CWE**                | CWE-425                                                   |
 | **Severity**           | Medium (CVSS 3.1: 5.3) / Medium (CVSS 4.0: 6.9)                                                  |
 | **Attack Vector**      | Network (unauthenticated remote)                                                                 |
-| **CVSS 3.1**           | `AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N` — Base Score 5.3                                            |
-| **CVSS 4.0**           | `AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N` — Base Score 6.9                        |
-| **Status**             | Fixed — vendor firmware update released (see advisory for affected/patched model list)           |
+| **CVSS 3.1**           | `AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N` - Base Score 5.3                                            |
+| **CVSS 4.0**           | `AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N` - Base Score 6.9                        |
+| **Status**             | Fixed - vendor firmware update released (see advisory for affected/patched model list)           |
 
 ---
 
 ## Executive Summary
 
-The web interface of several Sharp Digital Multifunctional System (MFP) models exposes a `preview.jpeg` endpoint that is used by the device's own web UI to render thumbnail previews of scanned/printed jobs stored on the device. The endpoint accepts a numeric `fileid` parameter but does not verify that the requesting session is authenticated or that the caller is authorized to access the referenced job. `fileid` values are sequential and trivially enumerable, allowing an unauthenticated remote attacker to iterate over the identifier space and retrieve preview images of documents scanned, copied, or printed by other users of the device — including documents belonging to previous jobs that the attacker never submitted.
+The web interface of several Sharp Digital Multifunctional System (MFP) models exposes a `/preview.jpeg` endpoint that is used by the device's own web UI to render thumbnail previews of scanned/printed jobs stored on the device. The endpoint accepts a numeric `fileid` parameter but does not verify that the requesting session is authenticated or that the caller is authorized to access the referenced job. `fileid` values are sequential and trivially enumerable, allowing an unauthenticated remote attacker to iterate over the identifier space and retrieve preview images of documents scanned, copied, or printed by other users of the device — including documents belonging to previous jobs that the attacker never submitted.
 
 Because many organizations expose these MFPs on internal networks (and some directly to the Internet), this issue allows silent, unauthenticated bulk exfiltration of potentially sensitive scanned material (contracts, ID documents, invoices, HR records, etc.).
 
