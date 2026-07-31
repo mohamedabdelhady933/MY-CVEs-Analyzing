@@ -17,7 +17,7 @@
 
 ## Executive Summary
 
-The web interface of several Sharp Digital Multifunctional System (MFP) models exposes a `/preview.jpeg` endpoint that is used by the device's own web UI to render thumbnail previews of scanned/printed jobs stored on the device. The endpoint accepts a numeric `fileid` parameter but does not verify that the requesting session is authenticated or that the caller is authorized to access the referenced job. `fileid` values are sequential and trivially enumerable, allowing an unauthenticated remote attacker to iterate over the identifier space and retrieve preview images of documents scanned, copied, or printed by other users of the device — including documents belonging to previous jobs that the attacker never submitted.
+The web interface of several Sharp Digital Multifunctional System (MFP) models exposes a `/preview.jpeg` endpoint that is used by the device's own web UI to render thumbnail previews of scanned/printed jobs stored on the device. The endpoint accepts a numeric `fileid` parameter but does not verify that the requesting session is authenticated or that the caller is authorized to access the referenced job. `fileid` values are sequential and trivially enumerable, allowing an unauthenticated remote attacker to iterate over the identifier space and retrieve preview images of documents scanned, copied, or printed by other users of the device including documents belonging to previous jobs that the attacker never submitted.
 
 Because many organizations expose these MFPs on internal networks (and some directly to the Internet), this issue allows silent, unauthenticated bulk exfiltration of potentially sensitive scanned material (contracts, ID documents, invoices, HR records, etc.).
 
@@ -41,25 +41,17 @@ GET /preview.jpeg?fileid=<ID>&jobtype=<TYPE>&rotate=<0|90|180|270>&page=<PAGE>&f
 | `jobtype` | Job type (e.g. `11` observed for scan/print job previews)           |
 | `rotate`  | Rotation applied to the returned preview image                      |
 | `page`    | Page number within a multi-page job                                 |
-| `filepw`  | Optional per-file password parameter — left empty in observed traffic |
+| `filepw`  | Optional per-file password parameter - left empty in observed traffic |
 
 A representative captured request/response (host redacted):
 
 ```
 GET /preview.jpeg?fileid=1048611&jobtype=11&rotate=0&page=1&filepw= HTTP/1.1
 Host: <redacted>
-Accept-Language: en-US,en;q=0.9
-Upgrade-Insecure-Requests: 1
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
-Accept-Encoding: gzip, deflate, br
-Connection: keep-alive
-Referer: <redacted>
 ```
 
 ```
 HTTP/1.1 200 OK
-Server: Rapid Logic/1.1
 MIME-version: 1.0
 Content-Type: image/jpeg; name=preview.png
 Content-disposition: attachment; filename=preview.png
