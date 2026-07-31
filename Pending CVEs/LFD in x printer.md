@@ -5,8 +5,8 @@
 | **Affected Software**  | Sharp Digital MFP / Printer web interface (multiple models — see [Sharp Advisory 2026-004](https://global.sharp/corporate/info/product-security/advisory-list/2026-004/)) |
 | **Vendor**             | Sharp Corporation                                                                                 |
 | **CVE ID**              | [CVE-2026-60011](https://www.cve.org/CVERecord?id=CVE-2026-60011)                                |
-| **Vulnerability Type** | Insecure Direct Object Reference (IDOR) / Broken Access Control — Unauthenticated Information Disclosure |
-| **CWE**                | CWE-425 — Direct Request ('Forced Browsing')                                                     |
+| **Vulnerability Type** |  Unauthenticated Information Disclosure |
+| **CWE**                | CWE-425                                                   |
 | **Severity**           | Medium (CVSS 3.1: 5.3) / Medium (CVSS 4.0: 6.9)                                                  |
 | **Attack Vector**      | Network (unauthenticated remote)                                                                 |
 | **CVSS 3.1**           | `AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N` — Base Score 5.3                                            |
