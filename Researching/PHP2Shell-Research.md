@@ -273,5 +273,3 @@ This report records the public release date only. Earlier discovery and disclosu
 9. **Detection scanner:** [JoasASantos/php2shell-scanner](https://github.com/JoasASantos/php2shell-scanner)
 
 ---
-
-**Testing note:** Only test systems you own or have explicit permission to assess. Multipart probes can disrupt service, so run them only under an approved test plan.
