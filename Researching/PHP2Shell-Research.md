@@ -8,7 +8,7 @@
 
 ## 1. Overview
 
-On October 21, 2026, the PHP project disclosed two critical memory-safety flaws: **CVE-2026-109618** and **CVE-2026-109619**. Under the right conditions, both can lead to unauthenticated remote code execution (RCE); the research also demonstrated disclosure of process memory.
+The PHP project disclosed two critical memory-safety flaws: **CVE-2026-109618** and **CVE-2026-109619**. Under the right conditions, both can lead to unauthenticated remote code execution (RCE); the research also demonstrated disclosure of process memory.
 
 These are PHP runtime bugs, not flaws limited to a particular CMS. Updating WordPress, Drupal, Joomla, or application code will not fix an affected PHP installation. Whether a deployment can be exploited depends on its PHP build, SAPI, configuration, request path, and worker lifecycle.
 
