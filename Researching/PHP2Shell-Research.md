@@ -87,7 +87,7 @@ Send a second request handled by the same persistent worker. PHP interprets atta
 
 Using the memory disclosure to bypass ASLR, combine the corruption primitive into a working remote code execution chain inside the PHP worker process  effectively compromising the web server.
 
-> Exploitation depends on the PHP version, configuration (`memory_limit`, `post_max_size`, `max_input_vars`), and worker model. Persistent workers (FPM, mod_php) are far more exposed than per-request CGI, and an exploit that works on one deployment may need adjustment for another. The community scanner php2shell-scanner performs non-destructive version-based detection; its `--probe` mode can disrupt workers and is for authorized use only.
+> Exploitation depends on the PHP version, configuration (`memory_limit`, `post_max_size`, `max_input_vars`), and worker model. Persistent workers (FPM, mod_php) are far more exposed than per-request CGI, and an exploit that works on one deployment may need adjustment for another. The community scanner php2shell-scanner performs non-destructive version-based detection; its `--probe` mode can disrupt workers.
 
 ---
 
@@ -234,7 +234,7 @@ The open-source **php2shell-scanner** (JoasASantos) provides non-destructive det
 - **PRESENCE**  PHP detection without a version (PHPSESSID cookie, `.php` references, redirects)
 - **BANNER**  robust raw-socket banner grab (HEAD/GET/OPTIONS plus a malformed probe over HTTP/HTTPS, error-page disclosure)
 - **RECON**  subdomain enumeration via crt.sh (Certificate Transparency) with subfinder fallback/merge, then fan-out scan of resolved hosts
-- **PROBE** (opt-in)  large multipart requests to observe worker instability; may cause denial of service, authorized use only
+- **PROBE** (opt-in)  large multipart requests to observe worker instability; may cause denial of service
 
 Fixed versions per branch (matching the php-src advisories):
 
