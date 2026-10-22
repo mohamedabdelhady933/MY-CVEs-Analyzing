@@ -24,7 +24,7 @@ Apache `mod_php` is considered the highest-risk setup because the demonstrated p
 | PHP 8.2.x | 8.2.35 |
 | PHP 8.1 and earlier | End of upstream support; check distribution/vendor backports or upgrade |
 
-Updating to a fixed PHP release is the only complete fix. Configuration changes and WAF rules can reduce exposure to particular paths, but they should be treated as temporary safeguards—not replacements for patching.
+Updating to a fixed PHP release is the only complete fix. Configuration changes and WAF rules can reduce exposure to particular paths, but they should be treated as temporary safeguardsnot replacements for patching.
 
 ## 2. The Two CVEs
 
@@ -181,7 +181,7 @@ If an attacker can exploit the issue, the impact may include:
 - **Process-memory disclosure**, potentially exposing data held in process memory from other requests.
 - **Confidentiality, integrity, and availability impacts**, including follow-on compromise if the PHP worker has excessive permissions or access to sensitive resources.
 
-Examples of potentially exposed data—such as credentials, session tokens, API keys, or other application data—should be described as potential impact unless the cited research confirms that specific data was recovered.
+Examples of potentially exposed datasuch as credentials, session tokens, API keys, or other application datashould be described as potential impact unless the cited research confirms that specific data was recovered.
 
 Code execution runs with the privileges available to the PHP worker. It does not automatically mean root access; the wider impact depends on the worker account, isolation, accessible secrets, and surrounding infrastructure.
 
