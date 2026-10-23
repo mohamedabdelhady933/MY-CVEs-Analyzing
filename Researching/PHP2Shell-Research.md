@@ -1,5 +1,7 @@
 # PHP2Shell: Analysis of Two Critical PHP Runtime Vulnerabilities
 
+<img width="1924" height="799" alt="2026-10-23_09-36" src="https://github.com/user-attachments/assets/41d0586d-2700-4d12-9cf5-9163139cc9e8" />
+
 > **Report updated:** October 22, 2026  
 > **Affected component:** PHP core runtime  
 > **CVE IDs:** CVE-2026-109618 and CVE-2026-109619  
