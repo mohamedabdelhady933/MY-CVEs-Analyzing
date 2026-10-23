@@ -348,24 +348,6 @@ This architecture reduces the chance that a model's inconsistent response will d
 
 ---
 
-## Limitations
-
-This investigation is based on a preliminary observation described in a LinkedIn post.
-
-The following information remains necessary for a complete technical validation:
-
-- The exact prompts used in the original test.
-- The model provider, model version, and configuration.
-- Whether command execution was enabled explicitly.
-- The tool or interface responsible for executing commands.
-- The exact command and its output.
-- Whether the action exceeded the tool's intended permissions.
-- Independent reproduction of the behavior.
-- A comparison with existing prompt-composition and jailbreak research.
-
-Until this information is available, the proposed mechanism and novelty of Context Deviation remain unconfirmed.
-
----
 
 ## Conclusion
 
