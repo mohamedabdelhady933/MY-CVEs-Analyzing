@@ -373,8 +373,4 @@ Until then, Context Deviation should be presented as an ongoing research investi
 
    https://arxiv.org/abs/2411.06426
 
-3. **Original Context Deviation research announcement Mohamed Abdelhady**
-
-   https://lnkd.in/p/dEbM4SS9
-
 ---
