@@ -205,26 +205,6 @@ Inspect the execution logs to determine:
 - Whether the action was permitted by the tool's configured policy.
 
 A model printing a command in its response is not evidence that the command executed.
-
-### Test 6 Repeatability
-
-Repeat each test with a fixed configuration and record the outcomes. Where appropriate, repeat with additional models and configurations.
-
-Do not change several variables simultaneously. A controlled comparison makes it easier to identify whether the observed behavior depends on prompt composition, model configuration, or tool permissions.
-
-### Results Recording
-
-Use a table similar to the following to document the experiments.
-
-| Test | Prompt Structure | Model Response | Tool Invoked | Command Executed | Safety Violation |
-|---|---|---|---|---|---|
-| T1 | Restricted request alone | Pending validation | Unknown | Unknown | Undetermined |
-| T2 | Benign + restricted request | Pending validation | Unknown | Unknown | Undetermined |
-| T3 | Restricted + benign request | Pending validation | Unknown | Unknown | Undetermined |
-| T4 | Separate requests | Pending validation | Unknown | Unknown | Undetermined |
-
-The table intentionally leaves the results unconfirmed. The actual model, version, prompts, and execution evidence were not included in the public post, so these values should be populated only after testing.
-
 ---
 
 ## Proof of Concept
