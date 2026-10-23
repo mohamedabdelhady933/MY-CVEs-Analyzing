@@ -203,8 +203,6 @@ Inspect the execution logs to determine:
 - Which process executed it.
 - Whether the command completed successfully.
 - Whether the action was permitted by the tool's configured policy.
-
-A model printing a command in its response is not evidence that the command executed.
 ---
 
 ## Proof of Concept
@@ -313,17 +311,14 @@ These are conditional risks, not confirmed consequences of the initial observati
 
 A model running a harmless command within an intentionally configured sandbox does not establish remote code execution, sandbox escape, or host compromise.
 
-### Severity
-
-**Severity: Not yet determined.**
-
-A reliable severity assessment requires evidence of the affected system, required access, reproducibility, actual security-policy violation, and maximum demonstrated impact.
-
-A response-level jailbreak should not automatically be classified as remote code execution. Conversely, a demonstrated unauthorized tool action may warrant a separate assessment of the tool integration and execution boundary.
-
 ---
 
 ## Recommended Remediation
+
+# Guardrails and Policy Enforcement
+Guardrails are an important part of preventing unexpected model behavior, particularly when a single prompt contains multiple instructions with different risk levels. In the context of Context Deviation, the application should not evaluate a prompt only as one combined request. Instead, it should identify and assess each requested action independently, including restricted instructions embedded between otherwise harmless questions.
+
+Although model-level safety mechanisms can help identify potentially harmful requests, they should not be the only line of defense. If an LLM can invoke tools, execute commands, access files, or interact with external services, the application must independently validate and authorize each action before execution.
 
 | # | Recommendation | Priority |
 |---|---|---|
