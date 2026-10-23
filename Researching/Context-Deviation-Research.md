@@ -2,15 +2,10 @@
 
 | Field | Details |
 |---|---|
-| Researcher | Mohamed Abdelhady |
 | Research Area | AI / LLM Security |
 | Vulnerability Class | Potential LLM Jailbreak / Inconsistent Safety Enforcement |
-| Research Status | Preliminary Further Validation Required |
 | Attack Vector | Single user prompt containing multiple instructions |
-| Primary Reference | SequentialBreak ACL 2025 |
 | Execution Environment | Sandbox, as described in the initial observation |
-| CVE | Not assigned |
-| Severity | Not yet determined |
 
 ---
 
@@ -277,9 +272,9 @@ Only the last two outcomes necessarily involve tool-use or execution-control con
 
 ## Root Cause Analysis
 
-The root cause has not yet been established.
+The root cause has not yet been established. In particular, the current evidence does not prove that the behavior is caused by delimiter misconfiguration, prompt parsing, or a model-level safety failure. These are plausible hypotheses that should be tested against the actual prompt format, model response, and tool execution logs.
 
-Several explanations should be considered rather than assuming that the model's attention mechanism or context handling is responsible.
+A key distinction is that prompt delimiters are usually textual or structural hints, not a security boundary by themselves. If an application uses separators to distinguish individual questions, instructions, retrieved content, or trusted system guidance, inconsistent parsing or weak instruction-boundary handling could contribute to unexpected behavior. However, the model may also simply follow the combined request in an unsafe way even when the delimiters are correctly formed.
 
 ### 1. Inconsistent Safety Enforcement
 
@@ -426,7 +421,3 @@ Until then, Context Deviation should be presented as an ongoing research investi
    https://lnkd.in/p/dEbM4SS9
 
 ---
-
-*Researcher: Mohamed Abdelhady*
-
-*Status: Preliminary research awaiting controlled reproduction and technical validation.*
