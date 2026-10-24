@@ -14,6 +14,7 @@
 ## Executive Summary
 
 While studying AI and Large Language Model (LLM) security, I observed a potentially interesting behavior that I refer to as **Context Deviation**. The initial observation involved combining a benign question with a restricted request in a single prompt. During testing, I observed inconsistent safety enforcement and system-command execution within the sandbox environment.
+<img width="1201" height="741" alt="image" src="https://github.com/user-attachments/assets/d2826203-00a8-4724-920b-6b05eb91c292" />
 
 The behavior raises two related security questions:
 
