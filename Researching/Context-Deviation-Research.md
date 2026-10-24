@@ -1,5 +1,7 @@
 # Context Deviation: Investigating Sequential Prompt Composition and LLM Safety Bypass
 
+<img width="1041" height="540" alt="ps 3" src="https://github.com/user-attachments/assets/1ba6c2e6-28d4-4bf6-adac-46ff5bde88a9" />
+
 | Field | Details |
 |---|---|
 | Research Area | AI / LLM Security |
